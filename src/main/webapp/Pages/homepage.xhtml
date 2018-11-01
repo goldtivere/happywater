@@ -13,7 +13,7 @@
                 PrimeFaces.settings.locale = 'en_US';
                 PrimeFaces.settings.projectStage = 'Development';
             }</script>
-        <title>Happy Water</title><script type="text/javascript" src="javax.faces.resource/js/nanoscroller.jsb45c.xhtml?ln=california-layout"></script><script type="text/javascript" src="javax.faces.resource/js/layout.jsb45c.xhtml?ln=california-layout"></script></head><body class="main-body">
+        <title>GetItDone</title><script type="text/javascript" src="javax.faces.resource/js/nanoscroller.jsb45c.xhtml?ln=california-layout"></script><script type="text/javascript" src="javax.faces.resource/js/layout.jsb45c.xhtml?ln=california-layout"></script></head><body class="main-body">
 
         <div class="layout-wrapper ">
             <form id="j_idt11" name="j_idt11" method="post" action="https://www.primefaces.org/california/empty.xhtml" enctype="application/x-www-form-urlencoded">
@@ -42,22 +42,22 @@
                             <input type="hidden" name="menuform" value="menuform" />
                             <ul id="menuform:j_idt51" class="layout-menu">
                                 <li id="menuform:om_dashboar" role="menuitem">
-                                    <a href="dashboard.html">
-                                        <i class="fa fa-fw fa-gift"></i>
-                                        <span>Make An Order</span>
-                                    </a>
+                                <h:outputLink value="#{temNav.viewMakeOrder()}">
+                                    <i class="fa fa-fw fa-gift"></i>
+                                    <span>Make An Order</span>
+                                </h:outputLink>
                                 </li>
-                                 <li id="menuform:om_dashboa" role="menuitem">
-                                    <a href="dashboard.html">
-                                        <i class="fa fa-fw fa-money"></i>
-                                        <span>View Transaction </span>
-                                    </a>
+                                <li id="menuform:om_dashboa" role="menuitem">
+                                <h:outputLink value="#{temNav.viewTransaction()}">
+                                    <i class="fa fa-fw fa-money"></i>
+                                    <span>View Transactions </span>
+                                </h:outputLink>
                                 </li>
-                                 <li id="menuform:om_dashboard" role="menuitem">
-                                    <a href="dashboard.html">
-                                        <i class="fa fa-fw fa-user"></i>
-                                        <span>My Profile</span>
-                                    </a>
+                                <li id="menuform:om_dashboard" role="menuitem">
+                                <h:outputLink value="#{temNav.viewProfile()}">
+                                    <i class="fa fa-fw fa-user"></i>
+                                    <span>My Profile</span>
+                                </h:outputLink>
                                 </li>
                             </ul><script id="menuform:j_idt51_s" type="text/javascript">PrimeFaces.cw("California", "me", {id: "menuform:j_idt51"});</script><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:38" value="-811935979397367829:-6670051899468126821" autocomplete="off" />
                         </form>
@@ -70,26 +70,20 @@
             <div class="layout-main">
                 <div class="route-bar">
                     <div class="route-bar-breadcrumb">
-                        <i class="fa fa-home"></i> <span>/ </span>Empty
+                        <a href="home.xhtml"> <i class="fa fa-home"></i></a> <span>/ </span>
+<!--                        <p:outputLabel value="#{temNav.titlePane}"/>-->
                     </div>
 
                 </div>
 
                 <div class="layout-main-content">
-                    <div class="ui-g">
-                        <div class="ui-g-12">
-                            <div class="card">
-                                <h1>Empty Page</h1>
-                                <p>Use this page to start from scratch and place your custom content.</p><button id="j_idt80" name="j_idt80" type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="display:inline-block;margin-top:5px" onclick="window.open('\/california\/dashboard.xhtml', '_self')"><span class="ui-button-text ui-c">Home</span></button><script id="j_idt80_s" type="text/javascript">PrimeFaces.cw("Button", "widget_j_idt80", {id: "j_idt80"});</script>
-                            </div>
-                        </div>
-                    </div>
+                    <ui:include src="#{temNav.page}"/> 
                 </div>
 
                 <div class="layout-footer ui-g-12">
                     <div class="ui-g">
                         <div class="ui-g-12 ui-md-6 footer-left">
-                            <h3>HappyWater</h3>                           
+                            <h3>GetItDone</h3>                           
                         </div>
                         <div class="ui-g-12 ui-md-6 footer-right">
                             <a href="#">
